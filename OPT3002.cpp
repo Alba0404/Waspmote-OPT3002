@@ -82,7 +82,6 @@ uint16_t OPT3002::readConfiguration()
 float OPT3002::readResult()
 {
 	uint16_t raw = _readRegister(OPT3002_REGISTER_RESULT);
-	USB.println(raw, HEX);
 	uint16_t exponent = ((raw & 0xF000) >> 12);
 	uint16_t fractional = (raw & 0x0FFF);
 	return (1.2f)*(fractional)*(pow(2,exponent));

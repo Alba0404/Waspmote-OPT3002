@@ -38,7 +38,6 @@ class OPT3002
 {
 	private:
 		uint8_t _address;
-		void _writeData(uint8_t reg, uint16_t data);
 		uint16_t _readRegister(uint8_t addr);
 	
 	public:

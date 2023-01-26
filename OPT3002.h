@@ -45,6 +45,7 @@ class OPT3002
 		int8_t ON(uint8_t address);
 		uint16_t readManufacturerID();
 		uint16_t readConfiguration();
+		uint16_t readRawResult();
 		float readResult();
 		float readLowLimit();
 		float readHighLimit();

@@ -1,4 +1,4 @@
-/*! \file OPT3002.c
+/*! \file OPT3002.cpp
     \brief Library for managing the OPT3002 sensor from TI.
 
     This work is licensed under the Creative Commons Attribution 4.0 
@@ -76,6 +76,16 @@ uint16_t OPT3002::readConfiguration()
 
 // ============================================================
 /*!
+ * \brief Read and return the result register.
+ * \return The result register.
+ */
+uint16_t OPT3002::readRawResult()
+{
+	return _readRegister(OPT3002_REGISTER_RESULT);
+}
+
+// ============================================================
+/*!
  * \brief Read result register, calc and return the real value.
  * \return float result : The last value mesured.
  */
@@ -132,4 +142,3 @@ uint16_t OPT3002::_readRegister(uint8_t reg)
 	content += buffer[1];
     return content;
 }
-
